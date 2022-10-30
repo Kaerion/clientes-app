@@ -1,0 +1,9 @@
+<button type="button" class="btn btn-primary my-3" (click)="enabled = !enabled">{{enabled == true? 'Ocultar':'Mostrar'}}</button>
+<div class="card">
+    <div class="card-header">
+        Listado clientes
+    </div>
+    <ul class = "list-group" *ngIf= "enabled">
+        <li class = "list-group-item" *ngFor="let client of clientList">{{ client }}</li>
+    </ul>
+</div>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bienvenido a Angular';
+  title = 'Bienvenido a la Web';
   description = 'Pruebas de desarrollo Api Restfull Vista en Angular';
-  developer = 'Kaerion'
+  developer = 'Jose A. Quero'
 }
