@@ -9,6 +9,6 @@ export class DirectiveComponent {
 
   constructor() { }
 
-  clientList: string[] = ['Cliente1', 'Cliente2', 'Cliente3'];
+  clientList: string[] = ['Producto1', 'Producto2', 'Producto3'];
   enabled: boolean = true;
 }
