@@ -1,0 +1,19 @@
+.form-container {
+    top: 5px;
+    color: white;
+}
+
+.title-header {
+   border-color: white;   
+}
+
+.label {
+    position: relative;
+    left: 15px;
+}
+
+.boton {
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+}

@@ -8,12 +8,15 @@ import { DirectiveComponent } from './footer/directive/directive.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClienteService } from './clientes/cliente.service';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './clientes/form.component'
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: 'clientes', pathMatch: 'full'},
   {path: 'directives', component: DirectiveComponent},
-  {path: 'clientes', component: ClientesComponent}
+  {path: 'clientes', component: ClientesComponent},
+  {path: 'clientes/form', component: FormComponent}
 ]
 
 @NgModule({
@@ -22,12 +25,14 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     DirectiveComponent,
-    ClientesComponent
+    ClientesComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ClienteService],
   bootstrap: [AppComponent]
