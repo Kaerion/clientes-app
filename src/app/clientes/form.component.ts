@@ -13,7 +13,6 @@ export class FormComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
   titulo: string = "Crear Cliente";
-  boton: string = "Crear";
 
   constructor(
     private clienteService: ClienteService, 
@@ -33,6 +32,15 @@ export class FormComponent implements OnInit {
     )
   }
 
+  public update(): void {
+    this.clienteService.update(this.cliente).subscribe(
+      cliente => {
+        this.router.navigate(['/clientes'])
+        swal.fire('Cliente Actualizado', `Cliente ${cliente.nombre} actualizado con exito!`, 'success');
+      }
+    )
+  }
+
   cargarCliente(): void {
     this.activatedRoute.params.subscribe(
       params => {
@@ -40,7 +48,6 @@ export class FormComponent implements OnInit {
         if(id){
           this.clienteService.getCliente(id).subscribe((cliente) => this.cliente = cliente);
           this.titulo = "Editar cliente";
-          this.boton = "Editar";
         }
       }
     )
