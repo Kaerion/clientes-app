@@ -12,7 +12,8 @@ import swal from 'sweetalert2';
 export class FormComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
-  titulo: string = "Crear Cliente"
+  titulo: string = "Crear Cliente";
+  boton: string = "Crear";
 
   constructor(
     private clienteService: ClienteService, 
@@ -39,6 +40,7 @@ export class FormComponent implements OnInit {
         if(id){
           this.clienteService.getCliente(id).subscribe((cliente) => this.cliente = cliente);
           this.titulo = "Editar cliente";
+          this.boton = "Editar";
         }
       }
     )
